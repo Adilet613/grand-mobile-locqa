@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qazaq-locqa"
+version = "0.2.0"
+description = "Evidence-first Flutter ARB QA with explicit human review provenance"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+locqa = "locqa.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["locqa*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
